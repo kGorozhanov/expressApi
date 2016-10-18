@@ -27,7 +27,6 @@ module.exports = {
         if (req.query && typeof req.headers.authorization === 'undefined') {
           req.headers.authorization = `Bearer ${req.cookies.token}`;
         }
-        console.log(req.cookies.token)
         validateJwt(req, res, next);
       })
       // Attach user to request
