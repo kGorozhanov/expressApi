@@ -2,6 +2,7 @@ const Router = require('express').Router;
 const router = new Router();
 
 const user  = require('./model/user/user-router');
+const post = require('./model/post/post-router');
 
 
 router.route('/').get((req, res) => {
@@ -10,7 +11,9 @@ router.route('/').get((req, res) => {
 
 router.use('/auth', require('./auth'));
 
-router.use('/users', user);;
+router.use('/users', user);
+
+router.use('/posts', post);
 
 
 module.exports = router;
